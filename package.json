@@ -5,12 +5,12 @@
 	"main": "main.js",
 	"scripts": {
 		"start": "cross-env ELECTRON_PLATFORM=win electron ./",
-		"pack:win:dir": "cross-env ELECTRON_PLATFORM=win lectron-builder --dir",
-		"pack:win": "cross-env ELECTRON_PLATFORM=win lectron-builder --win",
-		"pack:mac:dir": "cross-env ELECTRON_PLATFORM=mac lectron-builder --mac --dir",
-		"pack:mac": "cross-env ELECTRON_PLATFORM=mac lectron-builder --mac",
-		"pack:linux:dir": "cross-env ELECTRON_PLATFORM=linux lectron-builder --linux --dir",
-		"pack:linux": "cross-env ELECTRON_PLATFORM=linux lectron-builder --linux"
+		"pack:win:dir": "cross-env ELECTRON_PLATFORM=win electron-builder --dir",
+		"pack:win": "cross-env ELECTRON_PLATFORM=win electron-builder --win",
+		"pack:mac:dir": "cross-env ELECTRON_PLATFORM=mac electron-builder --mac --dir",
+		"pack:mac": "cross-env ELECTRON_PLATFORM=mac electron-builder --mac",
+		"pack:linux:dir": "cross-env ELECTRON_PLATFORM=linux electron-builder --linux --dir",
+		"pack:linux": "cross-env ELECTRON_PLATFORM=linux electron-builder --linux"
 	},
 	"author": "",
 	"license": "ISC",
