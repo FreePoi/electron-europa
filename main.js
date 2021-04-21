@@ -17,12 +17,13 @@ function createWindow () {
 
 app.whenReady().then(() => {
   let binPath = path.resolve(__dirname, 'build', 'europa-win.exe');
-  if (process.env.ELECTRON_PLATFORM === 'linux') {
+  if (process.platform === 'linux') {
     binPath = path.resolve(__dirname, 'build', 'europa-ubuntu20.04-amd64');
   }
 
-  console.log(`bin path:`, binPath, 'files:', fs.readdirSync(path.resolve(__dirname, 'build')));
-
+  console.log(`bin path:`, binPath);
+  console.log(`platform:`, process.platform);
+  console.log('files:', fs.readdirSync(path.resolve(__dirname, 'build')));
   childProcess.execFile(binPath, ['--tmp']);
 
   createWindow()
