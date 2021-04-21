@@ -1,0 +1,58 @@
+{
+	"name": "electron",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "cross-env ELECTRON_PLATFORM=win electron ./",
+		"pack:win:dir": "cross-env ELECTRON_PLATFORM=win lectron-builder --dir",
+		"pack:win": "cross-env ELECTRON_PLATFORM=win lectron-builder --win",
+		"pack:mac:dir": "cross-env ELECTRON_PLATFORM=mac lectron-builder --mac --dir",
+		"pack:mac": "cross-env ELECTRON_PLATFORM=mac lectron-builder --mac",
+		"pack:linux:dir": "cross-env ELECTRON_PLATFORM=linux lectron-builder --linux --dir",
+		"pack:linux": "cross-env ELECTRON_PLATFORM=linux lectron-builder --linux"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"electron": "^12.0.4",
+		"electron-builder": "^22.10.5"
+	},
+	"build": {
+		"appId": "ui.europa.patract",
+		"productName": "Europa-UI",
+		"copyright": "© 2021 Patract Labs Co., Limited, All Rights Reserved.",
+		"mac": {},
+		"linux": {
+			"target": "AppImage",
+			"category": "Development"
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "build/favicon.ico"
+		},
+		"directories": {
+			"buildResources": "build"
+		},
+		"files": [
+			"ui-resources/**/*",
+			"build/*",
+			"main.js"
+		],
+		"nsis": {
+			"oneClick": false,
+			"perMachine": true,
+			"allowToChangeInstallationDirectory": true,
+			"installerLanguages": [
+				"zh_CN"
+			],
+			"language": "0804",
+			"runAfterFinish": true,
+			"createDesktopShortcut": true,
+			"shortcutName": "europa",
+			"allowElevation": true,
+			"unicode": true
+		}
+	}
+}
