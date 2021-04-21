@@ -1,7 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const childProcess = require('child_process');
-const { resolve } = require('path');
 const fs = require('fs');
 
 function createWindow () {
@@ -17,14 +16,15 @@ function createWindow () {
 }
 
 app.whenReady().then(() => {
-  // childProcess.exec('build/europa-ubuntu20.04-amd64 --tmp');
-  let bin = 'europa-win.exe'
+  let binPath = path.resolve(__dirname, 'build', 'europa-win.exe');
   if (process.env.ELECTRON_PLATFORM === 'linux') {
-    bin = 'europa-ubuntu20.04-amd64';
+    binPath = path.resolve(__dirname, 'build', 'europa-ubuntu20.04-amd64');
   }
-  childProcess.execFile(`${__dirname}\\build\\${bin}`, ['--tmp']);
-  console.log(`${__dirname}\\build`, fs.readdirSync(`${__dirname}\\build`));
-  // childProcess.execFile('./build/europa.exe', ['--tmp']);
+
+  console.log(`bin path:`, binPath, 'files:', fs.readdirSync(path.resolve(__dirname, 'build')));
+
+  childProcess.execFile(binPath, ['--tmp']);
+
   createWindow()
 
   app.on('activate', () => {
