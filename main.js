@@ -21,6 +21,7 @@ app.whenReady().then(() => {
     binPath = path.resolve(__dirname, 'build', 'europa_linux_amd64');
   }
 
+  
   console.log(`bin path:`, binPath);
   console.log(`platform:`, process.platform);
   console.log('files:', fs.readdirSync(path.resolve(__dirname, 'build')));
