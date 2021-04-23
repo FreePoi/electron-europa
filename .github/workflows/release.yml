@@ -34,13 +34,13 @@ jobs:
           target: build/${{ matrix.binFileName }}
           token: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn
-      - run: ${{ matrix.command }}
-      - name: Upload applications to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.ACCESS_TOKEN }}
-          file: dist/${{ matrix.appName }}
-          asset_name: ${{ matrix.appName }}
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "Hello Electron"
+      # - run: ${{ matrix.command }}
+      # - name: Upload applications to release
+      #   uses: svenstaro/upload-release-action@v2
+      #   with:
+      #     repo_token: ${{ secrets.ACCESS_TOKEN }}
+      #     file: dist/${{ matrix.appName }}
+      #     asset_name: ${{ matrix.appName }}
+      #     tag: ${{ github.ref }}
+      #     overwrite: true
+      #     body: "Hello Electron"
