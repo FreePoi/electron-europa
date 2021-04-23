@@ -16,9 +16,9 @@ function createWindow () {
 }
 
 app.whenReady().then(() => {
-  let binPath = path.resolve(__dirname, 'build', 'europa-win.exe');
+  let binPath = path.resolve(__dirname, 'build', 'europa_win.exe');
   if (process.platform === 'linux') {
-    binPath = path.resolve(__dirname, 'build', 'europa-ubuntu20.04-amd64');
+    binPath = path.resolve(__dirname, 'build', 'europa_linux_amd64');
   }
 
   console.log(`bin path:`, binPath);

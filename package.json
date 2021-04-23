@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": " electron ./",
 		"pack:win:dir": " electron-builder --dir",
-		"pack:win": " electron-builder --win",
+		"pack:win": "electron-builder --win",
 		"pack:mac:dir": "electron-builder --mac --dir",
 		"pack:mac": "electron-builder --mac",
 		"pack:linux:dir": "electron-builder --linux --dir",
