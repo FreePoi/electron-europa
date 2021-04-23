@@ -13,11 +13,11 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            command: npm run pack:linux
+            command: yarn run pack:linux
             binFileName: "europa_linux_amd64"
             appName: "Europa-UI-1.0.0.AppImage"
           - os: windows-latest
-            command: npm run pack:win
+            command: yarn run pack:win
             binFileName: "europa_win.exe"
             appName: "Europa-UI Setup 1.0.0.exe"
 
@@ -33,7 +33,7 @@ jobs:
           file: ${{ matrix.binFileName }}
           target: build/${{ matrix.binFileName }}
           token: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm install
+      - run: yarn install
       - run: ${{ matrix.command }}
       - name: Upload applications to release
         uses: svenstaro/upload-release-action@v2
