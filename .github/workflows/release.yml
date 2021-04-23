@@ -29,7 +29,7 @@ jobs:
       - uses: dsaltares/fetch-gh-release-asset@master
         with:
           repo: "patractlabs/europa"
-          version: "test"
+          version: "tags/test-ci"
           file: ${{ matrix.binFileName }}
           target: build/${{ matrix.binFileName }}
           token: ${{ secrets.GITHUB_TOKEN }}
