@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
+    "postinstall": "electron-builder install-app-deps",
 		"start": " electron ./",
 		"pack:win:dir": " electron-builder --dir",
 		"pack:win": "electron-builder --win",

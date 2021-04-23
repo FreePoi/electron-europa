@@ -34,7 +34,11 @@ jobs:
           file: ${{ matrix.binFileName }}
           target: build/${{ matrix.binFileName }}
           token: ${{ secrets.GITHUB_TOKEN }}
-      - run: ${{ matrix.command }}
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+      # - run: ${{ matrix.command }}
       - name: Upload applications to release
         uses: svenstaro/upload-release-action@v2
         with:
